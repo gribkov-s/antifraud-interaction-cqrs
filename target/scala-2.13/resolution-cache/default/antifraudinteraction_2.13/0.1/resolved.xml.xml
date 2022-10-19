@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+	<info organisation="default"
+		module="antifraudinteraction_2.13"
+		revision="0.1"
+		status="integration"
+		publication="20220925025954"
+	>
+		<description>
+		AntifraudInteraction
+		</description>
+	</info>
+	<configurations>
+		<conf name="compile" visibility="public" description=""/>
+		<conf name="runtime" visibility="public" description="" extends="compile"/>
+		<conf name="test" visibility="public" description="" extends="runtime"/>
+		<conf name="provided" visibility="public" description=""/>
+		<conf name="optional" visibility="public" description=""/>
+		<conf name="compile-internal" visibility="private" description="" extends="compile,optional,provided"/>
+		<conf name="runtime-internal" visibility="private" description="" extends="runtime,optional"/>
+		<conf name="test-internal" visibility="private" description="" extends="test,optional,provided"/>
+		<conf name="plugin" visibility="private" description=""/>
+		<conf name="pom" visibility="public" description=""/>
+		<conf name="scala-tool" visibility="private" description=""/>
+		<conf name="scala-doc-tool" visibility="private" description=""/>
+	</configurations>
+	<publications>
+		<artifact name="antifraudinteraction_2.13" type="pom" ext="pom" conf="pom"/>
+		<artifact name="antifraudinteraction_2.13" type="jar" ext="jar" conf="compile"/>
+		<artifact name="antifraudinteraction_2.13" type="src" ext="jar" conf="compile" e:classifier="sources"/>
+		<artifact name="antifraudinteraction_2.13" type="doc" ext="jar" conf="compile" e:classifier="javadoc"/>
+	</publications>
+	<dependencies>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.13.8" conf="scala-tool->default,optional(default)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.13.8" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="dev.zio" name="zio_2.13" rev="1.0.4" conf="compile->default(compile)"/>
+		<dependency org="dev.zio" name="zio-streams_2.13" rev="1.0.4" conf="compile->default(compile)"/>
+		<dependency org="dev.zio" name="zio-kafka_2.13" rev="0.13.0" conf="compile->default(compile)"/>
+		<dependency org="dev.zio" name="zio-test_2.13" rev="1.0.4" conf="compile->default(compile)"/>
+		<dependency org="dev.zio" name="zio-test-sbt_2.13" rev="1.0.4" conf="compile->default(compile)"/>
+		<dependency org="dev.zio" name="zio-macros_2.13" rev="1.0.4" conf="compile->default(compile)"/>
+		<dependency org="dev.zio" name="zio-config_2.13" rev="1.0.4" conf="compile->default(compile)"/>
+		<dependency org="dev.zio" name="zio-config-magnolia_2.13" rev="1.0.4" conf="compile->default(compile)"/>
+		<dependency org="dev.zio" name="zio-config-typesafe_2.13" rev="1.0.4" conf="compile->default(compile)"/>
+		<dependency org="dev.zio" name="zio-interop-cats_2.13" rev="2.2.0.1" conf="compile->default(compile)"/>
+		<dependency org="org.liquibase" name="liquibase-core" rev="3.4.2" conf="compile->default(compile)"/>
+		<dependency org="org.postgresql" name="postgresql" rev="42.2.8" conf="compile->default(compile)"/>
+		<dependency org="io.getquill" name="quill-jdbc-zio_2.13" rev="3.12.0" conf="compile->default(compile)"/>
+		<dependency org="io.github.kitlangton" name="zio-magic_2.13" rev="0.3.11" conf="compile->default(compile)"/>
+		<dependency org="org.scalikejdbc" name="scalikejdbc_2.13" rev="3.5.0" conf="compile->default(compile)"/>
+		<dependency org="co.fs2" name="fs2-core_2.13" rev="2.4.2" conf="compile->default(compile)"/>
+		<dependency org="co.fs2" name="fs2-io_2.13" rev="2.4.2" conf="compile->default(compile)"/>
+		<dependency org="org.http4s" name="http4s-dsl_2.13" rev="0.21.7" conf="compile->default(compile)"/>
+		<dependency org="org.http4s" name="http4s-circe_2.13" rev="0.21.7" conf="compile->default(compile)"/>
+		<dependency org="org.http4s" name="http4s-ember-server_2.13" rev="0.21.7" conf="compile->default(compile)"/>
+		<dependency org="org.http4s" name="http4s-ember-client_2.13" rev="0.21.7" conf="compile->default(compile)"/>
+		<dependency org="org.http4s" name="http4s-blaze-server_2.13" rev="0.21.7" conf="compile->default(compile)"/>
+		<dependency org="org.http4s" name="http4s-blaze-client_2.13" rev="0.21.7" conf="compile->default(compile)"/>
+		<dependency org="com.github.pureconfig" name="pureconfig_2.13" rev="0.12.3" conf="compile->default(compile)"/>
+		<dependency org="com.github.pureconfig" name="pureconfig-cats-effect_2.13" rev="0.12.3" conf="compile->default(compile)"/>
+		<dependency org="com.monovore" name="decline_2.13" rev="2.0.0" conf="compile->default(compile)"/>
+		<dependency org="io.circe" name="circe-core_2.13" rev="0.14.1" conf="compile->default(compile)"/>
+		<dependency org="io.circe" name="circe-parser_2.13" rev="0.14.1" conf="compile->default(compile)"/>
+		<dependency org="io.circe" name="circe-generic_2.13" rev="0.14.1" conf="compile->default(compile)"/>
+		<dependency org="io.circe" name="circe-literal_2.13" rev="0.14.1" conf="compile->default(compile)"/>
+		<dependency org="ch.qos.logback" name="logback-classic" rev="1.2.3" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe" name="config" rev="1.4.0" conf="compile->default(compile)"/>
+		<dependency org="org.typelevel" name="kind-projector_2.13" rev="0.10.3" conf="compile->default(compile);plugin->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-actor-typed_2.13" rev="2.6.15" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-persistence-typed_2.13" rev="2.6.15" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-persistence-query_2.13" rev="2.6.15" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-stream_2.13" rev="2.6.15" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-stream-kafka_2.13" rev="2.1.1" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-http_2.13" rev="10.2.4" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-coordination_2.13" rev="2.6.15" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-cluster_2.13" rev="2.6.15" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-cluster-tools_2.13" rev="2.6.15" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-persistence-cassandra_2.13" rev="1.0.5" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.akka" name="akka-persistence-cassandra-launcher_2.13" rev="1.0.5" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.slick" name="slick_2.13" rev="3.3.3" conf="compile->default(compile)"/>
+		<dependency org="com.typesafe.slick" name="slick-hikaricp_2.13" rev="3.3.3" conf="compile->default(compile)"/>
+		<dependency org="com.lightbend.akka" name="akka-stream-alpakka-slick_2.13" rev="3.0.3" conf="compile->default(compile)"/>
+		<dependency org="org.iq80.leveldb" name="leveldb" rev="0.7" conf="compile->default(compile)"/>
+		<dependency org="org.fusesource.leveldbjni" name="leveldbjni-all" rev="1.8" conf="compile->default(compile)"/>
+		<dependency org="org.scalatest" name="scalatest_2.13" rev="3.2.1" conf="test->default(compile)"/>
+		<dependency org="org.scalatest" name="scalatest-funsuite_2.13" rev="3.2.1" conf="test->default(compile)"/>
+		<dependency org="org.scalamock" name="scalamock_2.13" rev="5.1.0" conf="test->default(compile)"/>
+		<dependency org="com.dimafeng" name="testcontainers-scala-postgresql_2.13" rev="0.39.11" conf="test->default(compile)"/>
+		<dependency org="com.dimafeng" name="testcontainers-scala-scalatest_2.13" rev="0.39.11" conf="test->default(compile)"/>
+		<dependency org="org.typelevel" name="cats-effect-testing-specs2_2.13" rev="1.1.1" conf="test->default(compile)"/>
+		<dependency org="org.specs2" name="specs2-core_2.13" rev="4.10.5" conf="test->default(compile)"/>
+		<dependency org="org.scalacheck" name="scalacheck_2.13" rev="1.15.1" conf="test->default(compile)"/>
+	</dependencies>
+</ivy-module>
